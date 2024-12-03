@@ -3,7 +3,8 @@ const colorslength = colors.length;
 const circleSolution = document.querySelectorAll('.circle__solution');
 const circleChoices = document.querySelectorAll('.circle__choices');
 const choicesCurrent = document.querySelector('.choices').innerHTML;
-// console.log(choicesCurrent);
+const modal = document.querySelector('.modal');
+const content = document.querySelector('.container');
 let compteur = 0;
 let step = 1;
 let handleSelectedColors = [];
@@ -102,7 +103,14 @@ const drop = (event) => {
             // On convertit les tableaux de couleurs en chaîne de caractères, si les deux chaînes sont bien égales, l'utilisateur a trouvé la combinaison
             if(arrayRandomColors.toString() === arrayMatchs.toString()){
                 console.log('Vous avez Gagné !!');
+
                 arrayColorsIndicators.push('green');
+
+                setTimeout(() =>{
+                    modal.classList.add('modalIn');
+                    modal.children[0].innerText = "Félicitation !! Vous avez trouvé la combinaison secrète !"
+                    content.classList.add('content__modal');
+                }, "2000");
             }else{
                 //  On entre dans le else si il y a des correspondance de couleurs
                 console.log("Vous n'avez pas Gagné !!");
@@ -133,8 +141,13 @@ const drop = (event) => {
 
         step++;
         // console.log('étape : ' + step);
-
         reset();
+
+        if(step > 12) {
+            modal.classList.add('modalIn');
+                    modal.children[0].innerText = "Désolé !! Vous n'avez pas trouvé la combinaison secrète !"
+                    content.classList.add('content__modal');
+        }
 
         const positionStep = document.querySelectorAll('[data-step="' + step + '"]');
         // console.log(positionStep);
