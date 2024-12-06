@@ -32,58 +32,28 @@ export const Header = (datas) => {
 };
 
 //   //  Exercice 1: Créer une fonction permettant de générer le menu déroulant.
-// Fonctionnalité pour afficher/masquer le menu
-document.addEventListener("DOMContentLoaded", () => {
-  const burgerIcon = document.querySelector(".icone__burger");
-  const navList = document.querySelector(".nav__list");
 
-  // Écouteur d'événements sur l'icône burger
-  burgerIcon.addEventListener("click", () => {
-    // Toggle de la classe active
-    if (navList.style.display === "block") {
-      navList.style.display = "none"; // Masquer la liste
-    } else {
-      navList.style.display = "block"; // Afficher la liste
-    }
+export const Dropdown = () => {
+  let navBar = document.querySelector(".nav");
+  let iconBurger = document.querySelector(".icone__burger");
+  iconBurger.addEventListener("click", () => {
+    navBar.classList.toggle("navFunction");
   });
-
-  // Initialement, cacher le menu sur les écrans inférieurs à 768px
-  if (window.innerWidth < 768) {
-    navList.style.display = "none";
-  }
-
-  // Adapter le comportement en cas de redimensionnement de la fenêtre
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 768) {
-      navList.style.display = "flex"; // Afficher le menu en flex
-    } else {
-      navList.style.display = "none"; // Cacher le menu
-    }
-  });
-});
-
-// const burgerIcon = document.querySelector(".icone__burger");
-// const navLink = document.querySelector(".nav__link");
-
-// burgerIcon.addEventListener("click", function () {
-//     if (navLink.style.opacity === "0" || navLink.style.opacity === "") {
-//         navLink.style.opacity = "1";
-//         navLink.style.transition = "opacity 0.3s ease";
-//         setTimeout(function () {
-//             navList.style.pointerEvents = "auto";
-//         }, 1);
-//     } else {
-//         navLink.style.opacity = "0";
-//         navLink.style.pointerEvents = "none";
-//     }
-// });
+};
 
 // //  Exercice 2: Créer une fonction pour les liens actifs, si dans l'URL ?pentre=Picasso, alors le lien <a> Picasso reste en couleur active (#d03001).
 
-// navLink.forEach((link) => {
+export const active = () => {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  let peintre = urlParams.get("peintre");
+  let dataPeintre = document.querySelector('[data-peintre="' + peintre + '"]');
+  console.log(dataPeintre);
+  console.log(queryString);
 
-//   link.addEventListener("click", () => {
-//       navLink.forEach((navLink) => navLink.classList.remove("active"));
-//       link.classList.add("active");
-//   });
-// });
+  urlParams.forEach(() => {
+    dataPeintre.addEventListener("click", () => {
+      peintre.classList.add("active");
+    });
+  });
+};

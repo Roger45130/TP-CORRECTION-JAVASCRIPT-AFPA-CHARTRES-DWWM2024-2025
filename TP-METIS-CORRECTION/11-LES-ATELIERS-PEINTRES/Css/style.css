@@ -34,12 +34,21 @@ html, body {
   border-radius: 0.5rem;
 }
 
+.navFunction {
+  display: block; /* Affiche le menu en mode bloc */
+  flex-direction: column; /* Dispose les éléments en colonne */
+  align-items: flex-start; /* Aligne les items à gauche */
+  background-color: #440b02; /* Couleur de fond */
+  width: 100%; /* Prend toute la largeur */
+  padding: 1rem;
+  border-radius: 0.5rem; /* Coins arrondis */
+  transition: all 0.3s ease; /* Transition fluide */
+}
+
 .nav__list {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  opacity: 1; /* Menu visible par défaut */
-  transition: all 0.3s ease; /* Animation fluide */
 }
 
 .nav__item {
@@ -52,7 +61,7 @@ html, body {
   font-weight: bold;
 }
 
-.nav__link.active {
+.active {
   color: #d03001;
 }
 
@@ -226,7 +235,7 @@ html, body {
         padding: 1rem;
     }
 
-    .nav__link.active {
+    .active {
       color: #d03001;
     }
 }
@@ -240,25 +249,27 @@ html, body {
         grid-template-columns: repeat(1, 1fr);
     }
 
-    .icone__burger.open {
-      color: #d03001;
-      transform: rotate(90deg);
-      transition: transform 0.3s ease, color 0.3s ease;
+    .navFunction {
+      display: flex; /* Annule le mode bloc sur les grands écrans */
+      flex-direction: row; /* Retourne au mode ligne */
+      align-items: center;
+      background-color: transparent; /* Suppression du fond */
+      padding: 0; /* Suppression des marges */
+      height: auto;
     }
 
-  .nav__list {
-    display: none; /* Cacher le menu par défaut */
-    flex-direction: column; /* Ajustement en mode colonne pour mobile */
-    align-items: flex-start;
-    background-color: #440b02; /* Même couleur que le fond du menu */
-    width: 100%;
-    padding: 1rem;
-    border-radius: 0.5rem;
+    .nav__list {
+        flex-direction: column;
+        align-items: flex-start;
+        display: none;
+        opacity: 0; /* Initialement invisible */
+        pointer-events: none; /* Désactive les clics */
+        transition: opacity 0.3s ease; /* Animation fluide */
   }
 
-  .nav__list.active {
-    display: block; /* Affiche le menu en mode bloc */
-  }
+    .active {
+        color: #d03001;
+    }
 
     .nav__item {
         border-right: 0 !important;
