@@ -38,6 +38,8 @@ html, body {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  opacity: 1; /* Menu visible par défaut */
+  transition: all 0.3s ease; /* Animation fluide */
 }
 
 .nav__item {
@@ -244,18 +246,19 @@ html, body {
       transition: transform 0.3s ease, color 0.3s ease;
     }
 
-    .nav__list {
-        flex-direction: column;
-        align-items: flex-start;
-        display: none;
-        opacity: 0; /* Initialement invisible */
-        pointer-events: none; /* Désactive les clics */
-        transition: opacity 0.3s ease; /* Animation fluide */
+  .nav__list {
+    display: none; /* Cacher le menu par défaut */
+    flex-direction: column; /* Ajustement en mode colonne pour mobile */
+    align-items: flex-start;
+    background-color: #440b02; /* Même couleur que le fond du menu */
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem;
   }
 
-    .nav__list.active {
-        color: #d03001;
-    }
+  .nav__list.active {
+    display: block; /* Affiche le menu en mode bloc */
+  }
 
     .nav__item {
         border-right: 0 !important;
