@@ -16,7 +16,7 @@ export const openLightBox = () => {
     const itemsLightBox = document.querySelectorAll('.icone__close, .icone__previous, .icone__next, .lightbox');
     // console.log(itemsLightBox);
     const currentPictureLightBox = document.querySelector('.picture__lightbox');
-    console.log(currentPictureLightBox);
+    // console.log(currentPictureLightBox);
 
     pictureGalery.forEach((item) => {
         item.addEventListener('click', () => {
@@ -24,8 +24,11 @@ export const openLightBox = () => {
             currentPictureLightBox.classList.remove('animationFaceInScale');
             //  Source de l'image de la galerie sur laquelle nous avons cliqué.
             const srcCurrentPictureGalery = item.src;
+            const dataPositionPictureGalery = item.getAttribute('data-position');
+            // console.log('position picture ' + dataPositionPictureGalery);
             //  On affecte la source de l'image de la galerie sur laquelle nous avons cliquée, à la source de l'image de la lightbox.
             currentPictureLightBox.src = srcCurrentPictureGalery;
+            currentPictureLightBox.setAttribute('data-position', dataPositionPictureGalery);
 
             //  On boucle tout les éléments de la lightbox (icones + div + img) afin de leur affecter les classes css permettant de l'ouvrir / fermer.
             itemsLightBox.forEach((item) => {
@@ -39,6 +42,27 @@ export const openLightBox = () => {
             }, "50");
         });
     });
+};
+
+export const NextLightBox = (datasTableauxByPeintre) => {
+    console.log(datasTableauxByPeintre);
+    const name = datasTableauxByPeintre.name;
+    const arrayTableaux = datasTableauxByPeintre.data;
+    const sizeArrayTableaux = arrayTableaux.length;
+    const iconeNext = document.querySelector('.icone__next');
+    console.log(name);
+    console.log(arrayTableaux);
+    console.log(sizeArrayTableaux);
+    console.log(iconeNext);
+
+    iconeNext.addEventListener('click',() => {
+        
+    })
+};
+
+
+export const PreviousLightBox = (datasTableauxByPeintre) => {
+    // console.log(datasTableauxByPeintre);
 };
 
 export const closeLightBox = () => {
