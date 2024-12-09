@@ -46,6 +46,7 @@ export const openLightBox = () => {
 
 let compteur = 0;
 let index = 0;
+let position = -1;
 
 
 export const NextLightBox = (datasTableauxByPeintre) => {
@@ -61,13 +62,22 @@ export const NextLightBox = (datasTableauxByPeintre) => {
 
     iconeNext.addEventListener('click',() => {
         const currentPictureLightBox = document.querySelector('.picture__lightbox');
-        console.log(currentPictureLightBox);
+        // console.log(currentPictureLightBox);
         const currentPositionPicture = parseInt(currentPictureLightBox.getAttribute('data-position'));
-        console.log('currentPositionPicture : ' + currentPositionPicture);
+        // console.log('currentPositionPicture : ' + currentPositionPicture);
 
         compteur++;
         index = currentPositionPicture + compteur;
-        console.log(index);
+        
+        if(index < sizeArrayTableaux) {
+            console.log("index : " + index);
+            currentPictureLightBox.src = `Assets/images/${name}/${arrayTableaux[index]}`;
+        }else {
+            position++;
+            if(position == sizeArrayTableaux) position = 0;
+            console.log("position : " + position);
+            currentPictureLightBox.src = `Assets/images/${name}/${arrayTableaux[position]}`;
+        }
     })
 };
 
@@ -90,7 +100,16 @@ export const PreviousLightBox = (datasTableauxByPeintre) => {
 
         // compteur++;
         // index = currentPositionPicture + compteur;
-        // console.log(index);
+        
+        // if(index < sizeArrayTableaux) {
+        //     console.log("index : " + index);
+        //     currentPictureLightBox.src = `Assets/images/${name}/${arrayTableaux[index]}`;
+        // }else {
+        //     position++;
+        //     if(position == sizeArrayTableaux) position = 0;
+        //     console.log("position : " + position);
+        //     currentPictureLightBox.src = `Assets/images/${name}/${arrayTableaux[position]}`;
+        // }
     // })
 };
 
