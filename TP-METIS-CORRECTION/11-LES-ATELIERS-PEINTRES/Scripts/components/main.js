@@ -23,8 +23,8 @@ export const Main = (datas) => {
 
     //  On boucle les tableaux récupérer dans le fichier data.json et on génère une card <figure> par tour de boucle, la boucle tourne autant de fois qu'il y a de tableau pour le peintre
     datasTableauxByPeintre.data.forEach((tableau, index) => {
-      console.log(index);
-      console.log(tableau);
+      // console.log(index);
+      // console.log(tableau);
       //  création de la balise <figure>
       const card = document.createElement('figure');
       card.classList.add('card');

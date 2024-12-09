@@ -2,7 +2,7 @@ import { getPeintres, getTableauxByPeintre } from "../utils/Api.js";
 import { Header, activeNavLink, dropdownNav } from "../components/header.js";
 import { Main } from "../components/main.js";
 import { Footer } from "../components/footer.js";
-import { LightBoxRender, openLightBox } from "../utils/Lightbox.js";
+import { LightBoxRender, openLightBox, closeLightBox } from "../utils/Lightbox.js";
 
 const displayData = (datas, datasTableauxByPeintre) => {
     const body = document.querySelector('body');
@@ -19,8 +19,8 @@ const displayData = (datas, datasTableauxByPeintre) => {
     activeNavLink();
     dropdownNav();
     openLightBox();
-    
-}
+    closeLightBox();
+};
 
 /*
     La programmation asynchrone est une technique qui permet à un programme de démarrer une tâche à l'execution potentiellement longue et, au lieu d'avoir à attendre la fin de la tâche, de pouvoir continuer à réagir aux autres évènements pendant l'execution de la tâche. Une fois la tâche terminée, le programme en reçoit le résultat.

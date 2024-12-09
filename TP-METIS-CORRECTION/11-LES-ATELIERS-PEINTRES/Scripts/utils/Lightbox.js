@@ -8,8 +8,42 @@ export const LightBoxRender = () => {
       <img src="Assets/images/Caillebotte/Autoportrait_Caillebotte.png" alt="image Caillebotte" class="picture__lightbox">
     </div>
     `;
-}
+};
 
 export const openLightBox = () => {
-    console.log('openLightBox');
-}
+    const pictureGalery = document.querySelectorAll('.peinture__picture');
+    // console.log(pictureGalery)
+    const itemsLightBox = document.querySelectorAll('.icone__close, .icone__previous, .icone__next, .lightbox');
+    // console.log(itemsLightBox);
+    const currentPictureLightBox = document.querySelector('.picture__lightbox');
+    console.log(currentPictureLightBox);
+
+    pictureGalery.forEach((item) => {
+        item.addEventListener('click', () => {
+            // alert('test')
+            
+            const srcCurrentPictureGalery = item.src;
+            currentPictureLightBox.src = srcCurrentPictureGalery;
+
+            itemsLightBox.forEach((item) => {
+                item.classList.remove('fadeOut');
+                item.classList.add('fadeIn');
+            });
+            currentPictureLightBox.classList.add('animationFaceInScale');
+        });
+    });
+};
+
+export const closeLightBox = () => {
+    const itemsLightBox = document.querySelectorAll('.icone__close, .icone__previous, .icone__next, .lightbox');
+    const iconeClose = document.querySelector('.icone__close');
+    // console.log(itemsLightBox);
+    // console.log(iconeClose);
+
+    iconeClose.addEventListener('click', () => {
+        itemsLightBox.forEach((item) => {
+            item.classList.remove('fadeIn');
+            item.classList.add('fadeOut');
+        })
+    })
+};
