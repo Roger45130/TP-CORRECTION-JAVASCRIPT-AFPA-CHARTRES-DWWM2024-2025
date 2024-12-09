@@ -44,6 +44,10 @@ export const openLightBox = () => {
     });
 };
 
+let compteur = 0;
+let index = 0;
+
+
 export const NextLightBox = (datasTableauxByPeintre) => {
     console.log(datasTableauxByPeintre);
     const name = datasTableauxByPeintre.name;
@@ -53,13 +57,19 @@ export const NextLightBox = (datasTableauxByPeintre) => {
     console.log(name);
     console.log(arrayTableaux);
     console.log(sizeArrayTableaux);
-    console.log(iconeNext);
+    // console.log(iconeNext);
 
     iconeNext.addEventListener('click',() => {
+        const currentPictureLightBox = document.querySelector('.picture__lightbox');
+        console.log(currentPictureLightBox);
+        const currentPositionPicture = parseInt(currentPictureLightBox.getAttribute('data-position'));
+        console.log('currentPositionPicture : ' + currentPositionPicture);
 
+        compteur++;
+        index = currentPositionPicture + compteur;
+        console.log(index);
     })
 };
-
 
 export const PreviousLightBox = (datasTableauxByPeintre) => {
     // console.log(datasTableauxByPeintre);
