@@ -2,7 +2,7 @@ import { getPeintres, getTableauxByPeintre } from "../utils/Api.js";
 import { Header, activeNavLink, dropdownNav } from "../components/header.js";
 import { Main } from "../components/main.js";
 import { Footer } from "../components/footer.js";
-import { LightBoxRender } from "../utils/Lightbox.js";
+import { LightBoxRender, openLightBox } from "../utils/Lightbox.js";
 
 const displayData = (datas, datasTableauxByPeintre) => {
     const body = document.querySelector('body');
@@ -18,6 +18,7 @@ const displayData = (datas, datasTableauxByPeintre) => {
     //  Execution des fonctions importées.
     activeNavLink();
     dropdownNav();
+    openLightBox();
     
 }
 

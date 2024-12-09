@@ -22,7 +22,9 @@ export const Main = (datas) => {
     peintureContent.classList.add('peinture__content');
 
     //  On boucle les tableaux récupérer dans le fichier data.json et on génère une card <figure> par tour de boucle, la boucle tourne autant de fois qu'il y a de tableau pour le peintre
-    datasTableauxByPeintre.data.forEach(tableau => {
+    datasTableauxByPeintre.data.forEach((tableau, index) => {
+      console.log(index);
+      console.log(tableau);
       //  création de la balise <figure>
       const card = document.createElement('figure');
       card.classList.add('card');
@@ -32,6 +34,8 @@ export const Main = (datas) => {
       picture.classList.add('peinture__picture');
       //  On définit l'attribut alt de l'<img> avec le nom du peintre et le nom de l'image
       picture.setAttribute('alt', `Tableau ${datasTableauxByPeintre.name} : ${tableau}`);
+      picture.setAttribute('data-position', index);
+      picture.setAttribute('data-peintre', datasTableauxByPeintre.name);
       //  On définit la source de l'image 'Assets/images/Monet/image.png'
       picture.src = `Assets/images/${datasTableauxByPeintre.name}/${tableau}`;
 
@@ -58,8 +62,6 @@ export const Main = (datas) => {
     // outerHTMl permet de convertir l'objet HTMLElement blockAnimation en html
     return blockAnimation.outerHTML;
   }
-
-  displayGalery();
 
     return `
         <main class="main">
