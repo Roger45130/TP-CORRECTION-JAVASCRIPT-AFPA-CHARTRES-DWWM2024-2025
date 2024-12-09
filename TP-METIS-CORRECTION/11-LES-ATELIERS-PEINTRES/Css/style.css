@@ -34,17 +34,6 @@ html, body {
   border-radius: 0.5rem;
 }
 
-.navFunction {
-  display: block; /* Affiche le menu en mode bloc */
-  flex-direction: column; /* Dispose les éléments en colonne */
-  align-items: flex-start; /* Aligne les items à gauche */
-  background-color: #440b02; /* Couleur de fond */
-  width: 100%; /* Prend toute la largeur */
-  padding: 1rem;
-  border-radius: 0.5rem; /* Coins arrondis */
-  transition: all 0.3s ease; /* Transition fluide */
-}
-
 .nav__list {
   display: flex;
   align-items: center;
@@ -249,13 +238,10 @@ html, body {
         grid-template-columns: repeat(1, 1fr);
     }
 
-    .navFunction {
-      display: flex; /* Annule le mode bloc sur les grands écrans */
-      flex-direction: row; /* Retourne au mode ligne */
-      align-items: center;
-      background-color: transparent; /* Suppression du fond */
-      padding: 0; /* Suppression des marges */
-      height: auto;
+    .icone__burger.open {
+      color: #d03001;
+      transform: rotate(90deg);
+      transition: transform 0.3s ease, color 0.3s ease;
     }
 
     .nav__list {

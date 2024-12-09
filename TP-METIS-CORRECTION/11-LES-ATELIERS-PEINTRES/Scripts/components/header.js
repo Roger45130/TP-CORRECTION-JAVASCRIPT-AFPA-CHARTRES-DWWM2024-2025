@@ -1,15 +1,17 @@
 export const Header = (datas) => {
-  let navLink = "";
-  //      Picasso in object toute les données
-  for (let key in datas) {
-    navLink += `
+    let navLink = "";
+    //      Picasso in object toute les données
+    for (let key in datas) {
+
+      
+      navLink += `
       <li class="nav__item">
-      <a href="?peintre=${key}" class="nav__link">${key}</a>
+      <a href="?peintre=${key}" data-peintre="${key}" class="nav__link">${key}</a>
       </li>
       `;
-  }
-
-  return `
+    }
+    
+    return `
     <header class="header">
         <div class="header__logo">
             <a href="index.html" class="header__link__logo">
@@ -29,31 +31,30 @@ export const Header = (datas) => {
         </nav>
     </header>
     `;
-};
-
+  };
+  
 //   //  Exercice 1: Créer une fonction permettant de générer le menu déroulant.
 
-export const Dropdown = () => {
-  let navBar = document.querySelector(".nav");
-  let iconBurger = document.querySelector(".icone__burger");
-  iconBurger.addEventListener("click", () => {
-    navBar.classList.toggle("navFunction");
-  });
-};
+export const dropdownNav = () => {
+  console.log('dropdownNav');
+}
 
 // //  Exercice 2: Créer une fonction pour les liens actifs, si dans l'URL ?pentre=Picasso, alors le lien <a> Picasso reste en couleur active (#d03001).
 
-export const active = () => {
+export const activeNavLink = () => {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  let peintre = urlParams.get("peintre");
-  let dataPeintre = document.querySelector('[data-peintre="' + peintre + '"]');
-  console.log(dataPeintre);
-  console.log(queryString);
+  const param = urlParams.get('peintre');
+  // console.log(window.location); //  retourne les paramètres de l'URL.
+  // console.log(queryString); //  retourne les paramètres de recherche de l'URL (?peintre=Picasso).
+  // console.log(param); //  retourne la valeur de l'indice de recherche ?peintre= de l'URL.
 
-  urlParams.forEach(() => {
-    dataPeintre.addEventListener("click", () => {
-      peintre.classList.add("active");
-    });
-  });
-};
+  let selector = '[data-peintre="' + param + '"]';
+
+  //  On entre dans cette condition que dans le cas où l'indice ?peintre N'EST PAS par défint, c'est-à-dire au premier changement de la page, on sélectionne le premier lien de la nav.
+  if(!param) selector = '.nav__link';
+
+  const activeLink = document.querySelector(selector);
+  activeLink.classList.add('active');
+  // console.log(activeLink);
+}
