@@ -56,13 +56,25 @@ export const NextLightBox = (datasTableauxByPeintre) => {
     console.log(iconeNext);
 
     iconeNext.addEventListener('click',() => {
-        
+
     })
 };
 
 
 export const PreviousLightBox = (datasTableauxByPeintre) => {
     // console.log(datasTableauxByPeintre);
+    // const name = datasTableauxByPeintre.name;
+    // const arrayTableaux = datasTableauxByPeintre.data;
+    // const sizeArrayTableaux = arrayTableaux.length;
+    // const iconePrevious = document.querySelector('.icone__next');
+    // console.log(name);
+    // console.log(arrayTableaux);
+    // console.log(sizeArrayTableaux);
+    // console.log(iconePrevious);
+
+    // iconePrevious.addEventListener('click',() => {
+        
+    // })
 };
 
 export const closeLightBox = () => {
