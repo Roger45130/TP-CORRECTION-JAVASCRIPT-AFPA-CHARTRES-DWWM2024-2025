@@ -76,14 +76,21 @@ export const PreviousLightBox = (datasTableauxByPeintre) => {
     // const name = datasTableauxByPeintre.name;
     // const arrayTableaux = datasTableauxByPeintre.data;
     // const sizeArrayTableaux = arrayTableaux.length;
-    // const iconePrevious = document.querySelector('.icone__next');
+    // const iconePrevious = document.querySelector('.icone__previous');
     // console.log(name);
     // console.log(arrayTableaux);
     // console.log(sizeArrayTableaux);
     // console.log(iconePrevious);
 
     // iconePrevious.addEventListener('click',() => {
-        
+        // const currentPictureLightBox = document.querySelector('.picture__lightbox');
+        // console.log(currentPictureLightBox);
+        // const currentPositionPicture = parseInt(currentPictureLightBox.getAttribute('data-position'));
+        // console.log('currentPositionPicture : ' + currentPositionPicture);
+
+        // compteur++;
+        // index = currentPositionPicture + compteur;
+        // console.log(index);
     // })
 };
 
