@@ -36,7 +36,14 @@ export const Header = (datas) => {
 //   //  Exercice 1: Créer une fonction permettant de générer le menu déroulant.
 
 export const dropdownNav = () => {
-  console.log('dropdownNav');
+  const iconeBurger = document.querySelector('.icone__burger');
+  const nav = document.querySelector('.nav');
+  // console.log(nav);
+
+  iconeBurger.addEventListener('click', () => {
+    nav.classList.toggle('toggleNav');
+  });
+
 }
 
 // //  Exercice 2: Créer une fonction pour les liens actifs, si dans l'URL ?pentre=Picasso, alors le lien <a> Picasso reste en couleur active (#d03001).
