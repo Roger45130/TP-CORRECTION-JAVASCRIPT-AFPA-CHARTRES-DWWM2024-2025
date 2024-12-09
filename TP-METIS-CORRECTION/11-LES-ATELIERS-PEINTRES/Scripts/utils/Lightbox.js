@@ -20,16 +20,23 @@ export const openLightBox = () => {
 
     pictureGalery.forEach((item) => {
         item.addEventListener('click', () => {
-            // alert('test')
-            
+            //  Pour avoir l'effet de zoom a chaque fois que l'on ouvre la lightbox, on supprime d'abord la classe animationFadeInScale pour l'affecter 50ms plus tard grace à la fonction setTimeout.
+            currentPictureLightBox.classList.remove('animationFaceInScale');
+            //  Source de l'image de la galerie sur laquelle nous avons cliqué.
             const srcCurrentPictureGalery = item.src;
+            //  On affecte la source de l'image de la galerie sur laquelle nous avons cliquée, à la source de l'image de la lightbox.
             currentPictureLightBox.src = srcCurrentPictureGalery;
 
+            //  On boucle tout les éléments de la lightbox (icones + div + img) afin de leur affecter les classes css permettant de l'ouvrir / fermer.
             itemsLightBox.forEach((item) => {
                 item.classList.remove('fadeOut');
                 item.classList.add('fadeIn');
             });
-            currentPictureLightBox.classList.add('animationFaceInScale');
+
+            //  Commentaire ci-dessus.
+            setTimeout(() => {
+                currentPictureLightBox.classList.add('animationFaceInScale');
+            }, "50");
         });
     });
 };
