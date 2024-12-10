@@ -4,12 +4,12 @@ export const Nav = (datas) => {
     <nav class="nav">
         <ul class="nav__list">
           <li class="nav__item">
-            <a href="" class="nav__link">Home</a>
+            <a href="index.html" class="nav__link">Home</a>
           </li>
           <li class="nav__item">
-            <a href="" class="nav__link">Panier</a>
+            <a href="panier.html" class="nav__link">Panier</a>
           </li>
         </ul>
-    </nav>
+      </nav>
     `;
 };
