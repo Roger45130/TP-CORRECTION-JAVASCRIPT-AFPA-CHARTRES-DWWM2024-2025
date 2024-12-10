@@ -14,10 +14,10 @@ const displayData = (datas) => {
     }
 
     body.innerHTML = `
-        <div class="container">
+        <div class="container__panier">
         ${Header()}
         ${Nav()}
-        ${Main(datas)}
+        ${MainPanier(datas)}
         ${Footer()}
         </div>
     `;
