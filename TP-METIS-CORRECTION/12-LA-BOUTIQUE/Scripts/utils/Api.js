@@ -1,40 +1,42 @@
 const BASE_URL = "Data/data.json";
 
 export const getData = async () => {
-    try {
-        const response = await fetch(BASE_URL);
-        return response.json();
-    } catch (error) {
-        return new Error("Quelque chose ne va pas.")
+  try {
+    const response = await fetch(BASE_URL);
+    if (!response.ok) {
+      throw new Error("Erreur lors de la récupération des données");
     }
-}
+    return await response.json();
+  } catch (error) {
+    console.error("Erreur :", error);
+    throw new Error(
+      "Quelque chose ne va pas lors de la récupération des données."
+    );
+  }
+};
 
 export const getArticles = async () => {
-    const data = await getData();
-    return data;
-}
+  return await getData();
+};
 
 export const getTableauArticles = async () => {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams (queryString);
-    let article = urlParams.get("article");
-    const datas = await getArticles();
-    let data;
-    
-    if(!article) {
-        const index = Object.keys(datas)[0];
-        data = datas[index];
-        article = index;
-    }
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const articleId = urlParams.get("id");
 
-    for (const key in datas) {
-        if(key === article) {
-            data = datas[key];
-        }
-    }
+  const datas = await getArticles();
 
-    return {
-        name: article,
-        data: data.article
-    }
+  if (!datas || !datas.products) {
+    throw new Error("Les données des produits sont manquantes ou incorrectes.");
+  }
+
+  const product = datas.products.find(
+    (item) => item.id.toString() === articleId
+  );
+
+  if (!product) {
+    throw new Error("Produit introuvable avec l'ID spécifié.");
+  }
+
+  return product;
 };

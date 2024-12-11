@@ -1,7 +1,7 @@
 import { getArticles } from "../utils/Api.js";
 import { Header } from "../components/Header.js";
 import { Nav } from "../components/Nav.js";
-import { Main } from "../components/Main.js";
+import { MainProduct } from "../components/MainProduct.js";
 import { Footer } from "../components/Footer.js";
 
 const displayData = (datas) => {
@@ -14,22 +14,13 @@ const displayData = (datas) => {
     }
 
     body.innerHTML = `
-        <div class="container">
-            ${Header()}
-            ${Nav()}
-            ${Main(datas)}
-            ${Footer()}
+        <div class="container__panier">
+        ${Header()}
+        ${Nav()}
+        ${MainProduct(datas)}
+        ${Footer()}
         </div>
     `;
-
-    // Ajout d'un événement pour les boutons "Voir plus"
-    const buttons = document.querySelectorAll('.btnVoirPlus');
-    buttons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            const productId = event.target.getAttribute('data-id');
-            window.location.href = `product.html?id=${productId}`;
-        });
-    });
 };
 
 (async () => {

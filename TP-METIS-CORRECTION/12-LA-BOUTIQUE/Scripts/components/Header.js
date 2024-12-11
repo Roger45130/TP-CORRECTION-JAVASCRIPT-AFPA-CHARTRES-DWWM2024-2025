@@ -1,7 +1,6 @@
-export const Header = (datas) => {
-    
+export const Header = () => {
     return `
-        <header class="header__logo">
+        <header class="header">
             <h1 class="header__title">Ma boutique</h1>
         </header>
     `;

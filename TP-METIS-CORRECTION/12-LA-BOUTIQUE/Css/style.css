@@ -1,4 +1,4 @@
-@import url(reset.css);
+@import url("reset.css");
 
 html,
 body {
@@ -11,24 +11,21 @@ body {
 
 .container {
     width: 85%;
-    height:1570px;
+    height: 1570px;
     margin: 0 auto;
     margin-top: 3rem;
     border-radius: 15px;
     background-color: #FFF;
-    -webkit-box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.48); 
-    box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.48);
+    box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.48);
 }
 
 .header__logo {
     margin: 2rem;
-
 }
 
 .header__title {
     font-family: "Inspiration", cursive;
     font-size: 4rem;
-    font-weight: 500;
     font-weight: bold;
     padding: 2rem;
 }
@@ -39,19 +36,18 @@ body {
     border-radius: 0.5rem;
     transition: all 0.5s;
 }
-  
+
 .nav__list {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    align-content: center;
     justify-content: space-around;
 }
-  
+
 .nav__item {
     padding: 1rem 2rem;
 }
-  
+
 .nav__link {
     color: #000000;
     text-decoration: none;
@@ -77,15 +73,12 @@ body {
 
 .article__content {
     margin-top: 1rem;
-    height: auto;
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    justify-content: space-between;
     align-items: stretch;
     justify-items: stretch;
-    align-content: space-evenly;
 }
 
 .card {
@@ -95,7 +88,7 @@ body {
     border-radius: 5px;
 }
 
-.article__picture{
+.article__picture {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -122,6 +115,7 @@ body {
     background-color: #000000;
     border-radius: 5px;
     color: #FFF;
+    cursor: pointer;
 }
 
 .btnVoirPlus:hover,
@@ -130,8 +124,7 @@ body {
 }
 
 .footer {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding: 3rem 0;
 }
 
 .copyright {
@@ -145,18 +138,15 @@ body {
 
 .container__panier {
     width: 85%;
-    height: 1000px;
     margin: 0 auto;
     margin-top: 3rem;
     border-radius: 15px;
     background-color: #FFF;
-    -webkit-box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.48); 
-    box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.48);
+    box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.48);
 }
 
 .panier__content {
     margin-top: 1rem;
-    height: auto;
     padding: 20px;
     display: grid;
     grid-template-columns: 30% 70%;
@@ -185,6 +175,12 @@ body {
 .subtitle__h3 {
     font-size: 1.7rem;
     font-weight: bold;
+}
+
+.reference, .indicateurPrix {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .title__h4 {
