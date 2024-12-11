@@ -17,7 +17,7 @@ export const MainProduct = (datas) => {
             <section class="presentation">
                 <h2 class="title__h2 name">${product.name}</h2>
 
-                <div class="panier__content">
+                <div class="product__content">
                     <div class="article__picture__content">
                         <img src="Assets/Images/Products/${product.image}" alt="${product.alt}" class="Images__Article image">
                     </div>

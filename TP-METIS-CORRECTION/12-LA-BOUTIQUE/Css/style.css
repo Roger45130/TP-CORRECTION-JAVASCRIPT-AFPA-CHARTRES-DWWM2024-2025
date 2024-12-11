@@ -55,6 +55,10 @@ body {
     font-weight: bold;
 }
 
+.nav__link:hover {
+    color: rgba(199, 47, 47, 0.863);
+}
+
 .presentation {
     display: flex;
     flex-direction: column;
@@ -109,8 +113,7 @@ body {
     font-weight: bold;
 }
 
-.btnVoirPlus,
-.btnAjoutPanier {
+.btnVoirPlus {
     padding: 10px;
     background-color: #000000;
     border-radius: 5px;
@@ -134,7 +137,7 @@ body {
     padding-bottom: 0.5rem;
 }
 
-/* *** PAGE PANIER *** */
+/* *** PAGE PRODUIT *** */
 
 .container__panier {
     width: 85%;
@@ -145,12 +148,17 @@ body {
     box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.48);
 }
 
-.panier__content {
+.product__content {
     margin-top: 1rem;
     padding: 20px;
     display: grid;
     grid-template-columns: 30% 70%;
     gap: 2rem;
+}
+
+.name {
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
 .article__picture__content {
@@ -205,6 +213,10 @@ body {
 }
 
 .btnAjoutPanier {
-    font-size: 1.2rem;
     width: 350px;
+    padding: 10px;
+    background-color: #000000;
+    border-radius: 5px;
+    color: #FFF;
+    cursor: pointer;
 }
