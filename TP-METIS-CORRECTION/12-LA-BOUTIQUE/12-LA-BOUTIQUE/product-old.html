@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inspiration&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="Css/style.css" />
+    <title>Ma Boutique | Panier</title>
+</head>
+<body>
+
+    <div class="container__panier">
+      <header class="header__logo">
+        <h1 class="header__title">Ma boutique</h1>
+      </header>
+        
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="panier.html" class="nav__link">Panier</a>
+          </li>
+        </ul>
+      </nav>
+      
+        <main class="main">
+            <section class="presentation">
+              <h2 class="title__h2 name"></h2>
+
+              <div class="panier__content">
+                <div class="article__picture__content">
+                    <img src="Assets/Images/Products/pull.jpg" alt="Pull" class="Images__Article">
+                </div>
+                <div class="article__description__content">
+                    <h3 class="subtitle__h3 title">Pull jaune poussin très moche</h3>
+                    <h4 class="title__h4 id">124</h4>
+                    <h4 class="title__h4 price">19.99</h4>
+                    <span class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus, ex vel ultrices iaculis, lacus erat dapibus enim, nec semper augue lectus eu massa. Vivamus ornare, tortor eu suscipit ornare, erat nunc rutrum felis, in condimentum tellus ipsum eget massa. Proin gravida diam vitae quam imperdiet eleifend. Morbi gravida augue ipsum, sed tempus velit hendrerit eu. Nullam vitae est malesuada, lacinia dui lacinia, lacinia erat. Praesent laoreet orci eget quam aliquam, id euismod sem iaculis. Etiam scelerisque sollicitudin ante, id ornare purus mollis et.</span>
+                    <p class="quantite__article">Qtés : </p>
+                        <select name="Quantite" id="qantite__select">
+                            <option value="" class="quantite">---- Quantités ----</option>
+                            <option value="1" class="quantite">1</option>
+                            <option value="2" class="quantite">2</option>
+                            <option value="3" class="quantite">3</option>
+                            <option value="4" class="quantite">4</option>
+                            <option value="plus" class="quantite">Plus ? Vous devez être STUPIDE !</option>
+                        </select>
+                    
+                      <button class="btnAjoutPanier">Ajouter au panier</button>
+                </div>
+              </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+          <p class="copyright">&copy; 2024 - Roger-Pierre LE GRASSE</p>
+        </footer>
+    </div>
+    
+    <!-- <script src="Scripts/pages/product.js" type="module"></script> -->
+</body>
+</html>
