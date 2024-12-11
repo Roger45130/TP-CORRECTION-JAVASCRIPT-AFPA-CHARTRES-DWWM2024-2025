@@ -201,19 +201,22 @@ body {
     text-align: justify;
 }
 
-#qantite__select {
-    padding: 10px;
-    border-radius: 5px;
-    width: 350px;
-}
-
-.quantite {
-    font-size: 1.2rem;
-    text-align: center;
-}
+.quantite__wrapper {
+    display: flex;
+    align-items: center; /* Aligne verticalement au centre */
+    gap: 10px; /* Ajoute un espacement entre le texte et le select */
+  }
+  
+  .quantite__article {
+    margin: 0; /* Supprime les marges par défaut */
+  }
+  
+  #quantite__select {
+    padding: 5px; /* Optionnel : améliore l'apparence du select */
+  }
 
 .btnAjoutPanier {
-    width: 350px;
+    width: 300px;
     padding: 10px;
     background-color: #000000;
     border-radius: 5px;
